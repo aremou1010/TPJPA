@@ -5,7 +5,12 @@
  */
 package com.bootcamp.tp;
 
+import com.bootcamp.tp.entities.Bailleur;
+import com.bootcamp.tp.entities.IndicateurPerformance;
+import com.bootcamp.tp.enums.TypeBailleur;
 import com.bootcamp.tp.repositories.BailleurRepository;
+import com.bootcamp.tp.repositories.IndicateurPerformanceRepository;
+import java.sql.SQLException;
 import javax.persistence.*;
 
 /**
@@ -13,22 +18,7 @@ import javax.persistence.*;
  * @author ARESKO
  */
 public class Main {
-    public  static  void main(String... args) {
-
-//        EntityManagerFactory emf = Persistence.createEntityManagerFactory("TPPU1") ;
-//
-//        EntityManager em = emf.createEntityManager() ;
-//
-//        Marin marin =  new Marin() ;
-//        marin.setNom("Jean");
-//        marin.setAge(24);
-//        
-//        em.getTransaction().begin() ;
-//        em.persist(marin) ;
-//        em.getTransaction().commit() ;
-        
-        BailleurRepository br = new BailleurRepository("TPPU");
-        
+    public  static  void main(String... args) throws SQLException {
 
         System.out.println("Hello World !") ;
     }

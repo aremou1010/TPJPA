@@ -18,14 +18,31 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  *
  * @author ARESKO
  */
-@Entity(name = "tp_bailleur")
+@Entity
+@Table(name = "tp_bailleur")
 @DiscriminatorValue("BAILLEUR")
 public class Bailleur extends Personne {
+
+    public Bailleur(int id, String nom, TypeBailleur typeBailleur){
+        super();
+        this.id = id;
+        this.nom = nom;
+        this.typeBailleur = typeBailleur;
+    }
+    
+    public Bailleur(int id, String nom, TypeBailleur typeBailleur, List<Projet> projets){
+        super();
+        this.id = id;
+        this.nom = nom;
+        this.typeBailleur = typeBailleur;
+        this.projets = projets;
+    }
 
     @Enumerated(EnumType.STRING)
     private TypeBailleur typeBailleur;

@@ -14,14 +14,29 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 /**
  *
  * @author ARESKO
  */
-@Entity(name = "tp_livrable")
+@Entity
+@Table(name = "tp_livrable")
 public class Livrable implements Serializable {
+    
+    public Livrable(){
+    
+    }
 
+    public Livrable(int id, String nom, Projet projet, IndicateurPerformance indicateurPerformance) {
+        this.id = id;
+        this.nom = nom;
+        this.projet = projet;
+        this.indicateurPerformance = indicateurPerformance;
+    }
+
+    
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

@@ -21,4 +21,6 @@ public class BailleurRepository extends BaseRepository<Bailleur> {
     public List<Bailleur> findAll() throws SQLException {
         return null;
     }
+    
+    
 }

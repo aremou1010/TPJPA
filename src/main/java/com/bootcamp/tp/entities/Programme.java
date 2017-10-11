@@ -19,14 +19,32 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 /**
  *
  * @author ARESKO
  */
-@Entity(name = "tp_programme")
+@Entity
+@Table(name = "tp_programme")
 public class Programme implements Serializable {
 
+    public Programme(){
+        
+    }
+
+    public Programme(int id, String nom, String objectif, IndicateurPerformance indicateurPerformance) {
+        this.id = id;
+        this.nom = nom;
+        this.objectif = objectif;
+        this.indicateurPerformance = indicateurPerformance;
+//        this.projets = projets;
+//        this.bailleurs = bailleurs;
+//        this.beneficiaires = beneficiaires;
+//        this.fournisseurs = fournisseurs;
+    }
+    
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

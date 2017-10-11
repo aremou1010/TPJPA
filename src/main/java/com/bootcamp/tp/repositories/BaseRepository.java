@@ -39,7 +39,10 @@ public abstract class BaseRepository<T> {
      * @throws SQLException
      */
     public boolean create(T obj) throws SQLException {
+        em.getTransaction().begin();
         em.persist(obj);
+        em.getTransaction().commit();
+
         return true;
     }
 

@@ -13,14 +13,24 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  *
  * @author ARESKO
  */
-@Entity(name = "tp_indicateurPerformance")
+@Entity
+@Table(name = "tp_indicateurPerformance")
 public class IndicateurPerformance implements Serializable {
 
+    public IndicateurPerformance() {
+    }
+    
+    public IndicateurPerformance(int id, String nom) {
+        this.id = id;
+        this.nom = nom;
+    }
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

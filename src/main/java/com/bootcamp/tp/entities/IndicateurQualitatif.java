@@ -12,14 +12,29 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
  *
  * @author ARESKO
  */
-@Entity(name = "tp_indicateurQualitatif")
+@Entity
+@Table(name = "tp_indicateurQualitatif")
 public class IndicateurQualitatif implements Serializable {
 
+    public IndicateurQualitatif() {
+    }
+
+    public IndicateurQualitatif(int id, String nom, String propriete, String valeur, IndicateurPerformance indicateurPerformance) {
+        this.id = id;
+        this.nom = nom;
+        this.propriete = propriete;
+        this.valeur = valeur;
+        this.indicateurPerformance = indicateurPerformance;
+    }
+    
+    
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

@@ -20,14 +20,30 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 /**
  *
  * @author ARESKO
  */
-@Entity(name = "tp_projet")
+@Entity
+@Table(name = "tp_projet")
 public class Projet implements Serializable {
 
+    public Projet(){
+        
+    }
+
+    public Projet(int id, String nom, String objectif, Programme programme, IndicateurPerformance indicateurPerformance) {
+        this.id = id;
+        this.nom = nom;
+        this.objectif = objectif;
+        this.programme = programme;
+//        this.livrables = livrables;
+        this.indicateurPerformance = indicateurPerformance;
+    }
+    
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

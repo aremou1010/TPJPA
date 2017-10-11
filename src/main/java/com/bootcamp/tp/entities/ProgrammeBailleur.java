@@ -14,15 +14,29 @@ import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.ManyToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
 
 /**
  *
  * @author ARESKO
  */
-@Entity(name = "tp_ProgrammeBailleur")
+@Entity
+@Table(name = "tp_ProgrammeBailleur")
 @IdClass(ProgrammeBailleurId.class)
 public class ProgrammeBailleur {
 
+    public ProgrammeBailleur(){
+        
+    }
+
+    public ProgrammeBailleur(int programmeId, int bailleurId, double montantFinancement, Programme programme, Bailleur bailleur) {
+        this.programmeId = programmeId;
+        this.bailleurId = bailleurId;
+        this.montantFinancement = montantFinancement;
+        this.programme = programme;
+        this.bailleur = bailleur;
+    }
+    
     @Id
     private int programmeId;
     

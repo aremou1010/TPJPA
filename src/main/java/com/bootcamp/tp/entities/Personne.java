@@ -14,12 +14,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.Table;
 
 /**
  *
  * @author ARESKO
  */
-@Entity(name = "tp_personne")
+@Entity
+@Table(name = "tp_personne")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="TYPE_ENTITE")
 @DiscriminatorValue("PERSONNE")
@@ -27,9 +29,9 @@ public class Personne implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    protected int id;
     
-    private String nom;
+    protected String nom;
 
     public int getId() {
         return id;

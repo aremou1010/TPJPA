@@ -15,14 +15,25 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  *
  * @author ARESKO
  */
-@Entity(name = "tp_beneficiaire")
+@Entity
+@Table(name = "tp_beneficiaire")
 @DiscriminatorValue("BENEFICIAIRE")
 public class Beneficiaire extends Personne {
+
+    public Beneficiaire() {
+    }
+    
+    public Beneficiaire(int id, String nom) {
+        super();
+        this.id = id;
+        this.nom = nom;
+    }
     
     @OneToMany(mappedBy = "beneficiaire")
     private List<ProgrammeBeneficiaire> programmes;

@@ -14,14 +14,29 @@ import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.ManyToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
 
 /**
  *
  * @author ARESKO
  */
-@Entity(name = "tp_ProgrammeBeneficiaire")
+@Entity
+@Table(name = "tp_ProgrammeBeneficiaire")
 @IdClass(ProgrammeBeneficiaireId.class)
 public class ProgrammeBeneficiaire {
+
+    public ProgrammeBeneficiaire(){
+        
+    }
+
+    public ProgrammeBeneficiaire(int programmeId, int beneficiaireId, int nombreBeneficiaire, Programme programme, Beneficiaire beneficiaire) {
+        this.programmeId = programmeId;
+        this.beneficiaireId = beneficiaireId;
+        this.nombreBeneficiaire = nombreBeneficiaire;
+        this.programme = programme;
+        this.beneficiaire = beneficiaire;
+    }
+    
     
     @Id
     private int programmeId;
